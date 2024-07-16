@@ -74,3 +74,6 @@ body {
   justify-content: space-between;
   margin-top: 5px;
 }
+.hidden {
+  display: none;
+}
