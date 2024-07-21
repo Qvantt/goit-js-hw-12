@@ -13,6 +13,8 @@ const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 const loader = document.querySelector('.loader');
 
+let lightbox = new SimpleLightbox('.gallery a');
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
   query = e.target.elements.searchQuery.value.trim();
@@ -27,7 +29,7 @@ form.addEventListener('submit', async e => {
     const data = await fetchImages(query, page, perPage);
     const markup = renderImages(data.hits);
     gallery.innerHTML = markup;
-    new SimpleLightbox('.gallery a').refresh();
+    lightbox.refresh();
 
     if (data.totalHits > perPage) {
       loadMoreBtn.classList.remove('hidden');
@@ -51,7 +53,7 @@ loadMoreBtn.addEventListener('click', async () => {
     const data = await fetchImages(query, page, perPage);
     const markup = renderImages(data.hits);
     gallery.insertAdjacentHTML('beforeend', markup);
-    new SimpleLightbox('.gallery a').refresh();
+    lightbox.refresh();
 
     if (page * perPage >= data.totalHits) {
       loadMoreBtn.classList.add('hidden');
