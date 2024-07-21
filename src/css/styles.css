@@ -50,6 +50,9 @@ body {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  position: fixed;
+  top: 15%;
+  left: 50%;
 }
 
 @keyframes rotation {
