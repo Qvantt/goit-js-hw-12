@@ -95,20 +95,6 @@ body {
 .hidden {
   display: none;
 }
-.loader {
-  display: none;
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-  margin: 20px auto;
-}
-
-.loader.visible {
-  display: block;
-}
 html {
   scroll-behavior: smooth;
 }
